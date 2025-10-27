@@ -1,7 +1,7 @@
-package org.gycoding.service;
+package org.gycoding.quasar;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NotificationsApplicationTests {
+class QuasarApplicationTests {
 }
