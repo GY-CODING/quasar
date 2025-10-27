@@ -1,6 +1,6 @@
 package org.gycoding.quasar.exceptions.controller;
 
-import org.gycoding.quasar.exceptions.model.APIException;
+import org.gycoding.quasar.exceptions.model.ServiceException;
 import org.gycoding.quasar.logs.service.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatusCode;
@@ -13,8 +13,8 @@ public class GeneralAdvice {
     @Value("${quasar.exceptions.logs:true}")
     private boolean logsEnabled;
 
-    @ExceptionHandler({APIException.class})
-    public ResponseEntity<String> handleServiceExceptions(APIException ex) {
+    @ExceptionHandler({ServiceException.class})
+    public ResponseEntity<String> handleServiceExceptions(ServiceException ex) {
         if(logsEnabled) Logger.error(ex.getMessage(), ex);
 
         return new ResponseEntity<>(ex.toString(), HttpStatusCode.valueOf(ex.getStatus()));
