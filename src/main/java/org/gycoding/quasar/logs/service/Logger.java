@@ -18,16 +18,22 @@ public class Logger {
     @Value("${quasar.logs.level:#{null}}")
     private String initialLevel;
 
-    @Autowired
+    private final LogsFeignFacade logsFacadeInstance;
     private static LogsFeignFacade logsFacade;
 
     private static String token;
     private static LogLevel level;
 
+    public Logger(LogsFeignFacade logsFeignFacadeInstance) {
+        this.logsFacadeInstance = logsFeignFacadeInstance;
+    }
+
     @PostConstruct
     public void init() {
         token = this.initialToken;
         level = LogLevel.fromString(this.initialLevel != null ? this.initialLevel : "INFO");
+
+        logsFacade = this.logsFacadeInstance;
     }
 
     public static void log(String message) {
