@@ -4,7 +4,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.gycoding.quasar.exceptions.model.APIException;
+import org.gycoding.quasar.exceptions.model.QuasarException;
 import org.gycoding.quasar.exceptions.model.QuasarError;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -25,7 +25,7 @@ public class APIFilter extends OncePerRequestFilter {
             filterChain.doFilter(request, response);
         } else {
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-            response.getWriter().write(new APIException(QuasarError.FORBIDDEN).toString());
+            response.getWriter().write(new QuasarException(QuasarError.FORBIDDEN).toString());
         }
     }
 }
