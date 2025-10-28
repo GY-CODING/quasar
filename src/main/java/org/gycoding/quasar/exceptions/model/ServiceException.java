@@ -1,10 +1,8 @@
 package org.gycoding.quasar.exceptions.model;
 
-import lombok.Builder;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
-@Builder
 @Getter
 public class ServiceException extends QuasarException {
     public ServiceException(String code, int status) {
