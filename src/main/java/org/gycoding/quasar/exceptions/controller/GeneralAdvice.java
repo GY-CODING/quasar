@@ -41,8 +41,8 @@ public class GeneralAdvice {
         return new ResponseEntity<>(ex.toString(), HttpStatusCode.valueOf(ex.getStatus()));
     }
 
-    @ExceptionHandler({FeignFacadeException.class})
-    public ResponseEntity<String> handleFeignFacadeExceptions(FeignFacadeException ex) {
+    @ExceptionHandler({FacadeException.class})
+    public ResponseEntity<String> handleFeignFacadeExceptions(FacadeException ex) {
         if(logsEnabled) Logger.error(ex.getMessage(), ex);
 
         return new ResponseEntity<>(ex.toString(), HttpStatusCode.valueOf(ex.getStatus()));
