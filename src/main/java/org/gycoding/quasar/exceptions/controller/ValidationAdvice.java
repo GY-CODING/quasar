@@ -1,7 +1,7 @@
 package org.gycoding.quasar.exceptions.controller;
 
 import org.gycoding.quasar.exceptions.model.APIException;
-import org.gycoding.quasar.exceptions.model.AdviceError;
+import org.gycoding.quasar.exceptions.model.QuasarError;
 import org.gycoding.quasar.logs.service.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatusCode;
@@ -25,9 +25,9 @@ public class ValidationAdvice {
                 .toList();
 
         final var exception = new APIException(
-                AdviceError.VALIDATION_FAILED.getCode(),
+                QuasarError.VALIDATION_FAILED.getCode(),
                 String.join(", ", errors),
-                AdviceError.VALIDATION_FAILED.getStatus().value()
+                QuasarError.VALIDATION_FAILED.getStatus().value()
         );
 
         if(logsEnabled) Logger.error(exception.getMessage(), exception);
