@@ -18,7 +18,7 @@ public class ConfigException extends Exception {
         this.status = status;
     }
 
-    public ConfigException(APIError error) {
+    public ConfigException(ExceptionError error) {
         super(error.getMessage());
         this.code   = error.getCode();
         this.status = error.getStatus().value();

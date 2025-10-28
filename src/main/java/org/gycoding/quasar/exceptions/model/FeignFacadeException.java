@@ -18,7 +18,7 @@ public class FeignFacadeException extends Exception {
         this.status = status;
     }
 
-    public FeignFacadeException(APIError error) {
+    public FeignFacadeException(ExceptionError error) {
         super(error.getMessage());
         this.code   = error.getCode();
         this.status = error.getStatus().value();

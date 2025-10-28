@@ -18,7 +18,7 @@ public class ServiceException extends Exception {
         this.status = status;
     }
 
-    public ServiceException(APIError error) {
+    public ServiceException(ExceptionError error) {
         super(error.getMessage());
         this.code   = error.getCode();
         this.status = error.getStatus().value();

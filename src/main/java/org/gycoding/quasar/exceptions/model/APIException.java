@@ -6,31 +6,31 @@ import org.springframework.http.HttpStatus;
 
 @Builder
 @Getter
-public class DatabaseException extends Exception {
+public class APIException extends Exception {
     private final static String OWNER = "GYCODING";
 
     private String code;
     private int status;
 
-    public DatabaseException(String code, int status) {
+    public APIException(String code, int status) {
         super();
         this.code   = code;
         this.status = status;
     }
 
-    public DatabaseException(ExceptionError error) {
+    public APIException(ExceptionError error) {
         super(error.getMessage());
         this.code   = error.getCode();
         this.status = error.getStatus().value();
     }
 
-    public DatabaseException(String code, String message, HttpStatus status) {
+    public APIException(String code, String message, HttpStatus status) {
         super(message);
         this.code   = code;
         this.status = status.value();
     }
 
-    public DatabaseException(String code, String message, int status) {
+    public APIException(String code, String message, int status) {
         super(message);
         this.code   = code;
         this.status = status;
