@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GITHUB_USERNAME = credentials('GITHUB_USER')
+        GITHUB_USERNAME = 'gy-toxyc'
         GITHUB_TOKEN = credentials('GITHUB_TOKEN')
     }
 
