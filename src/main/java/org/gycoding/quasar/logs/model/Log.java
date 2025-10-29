@@ -4,6 +4,7 @@ import lombok.Builder;
 
 @Builder
 public record Log(
+        LogEnv env,
         LogLevel level,
         String message,
         Object data

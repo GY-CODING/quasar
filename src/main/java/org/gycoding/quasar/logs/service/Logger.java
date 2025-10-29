@@ -4,6 +4,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.gycoding.quasar.logs.feign.betterstack.LogsFeignFacade;
 import org.gycoding.quasar.logs.model.Log;
+import org.gycoding.quasar.logs.model.LogEnv;
 import org.gycoding.quasar.logs.model.LogLevel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,6 +13,9 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class Logger {
+    @Value("${spring.profiles.active}")
+    private String initialProfile;
+
     @Value("${quasar.logs.token}")
     private String initialToken;
 
@@ -21,6 +25,7 @@ public class Logger {
     private final LogsFeignFacade logsFacadeInstance;
     private static LogsFeignFacade logsFacade;
 
+    private static String profile;
     private static String token;
     private static LogLevel level;
 
@@ -30,6 +35,7 @@ public class Logger {
 
     @PostConstruct
     public void init() {
+        profile = this.initialProfile;
         token = this.initialToken;
         level = LogLevel.fromString(this.initialLevel != null ? this.initialLevel : "INFO");
 
@@ -56,6 +62,7 @@ public class Logger {
 
     public static void info(String message) {
         final var body = Log.builder()
+                .env(LogEnv.fromString(profile))
                 .level(LogLevel.INFO)
                 .message(message)
                 .build();
@@ -68,6 +75,7 @@ public class Logger {
 
     public static void info(String message, Object data) {
         final var body = Log.builder()
+                .env(LogEnv.fromString(profile))
                 .level(LogLevel.INFO)
                 .message(message)
                 .data(data)
@@ -80,6 +88,7 @@ public class Logger {
 
     public static void debug(String message) {
         final var body = Log.builder()
+                .env(LogEnv.fromString(profile))
                 .level(LogLevel.DEBUG)
                 .message(message)
                 .build();
@@ -91,6 +100,7 @@ public class Logger {
 
     public static void debug(String message, Object data) {
         final var body = Log.builder()
+                .env(LogEnv.fromString(profile))
                 .level(LogLevel.DEBUG)
                 .message(message)
                 .data(data)
@@ -103,6 +113,7 @@ public class Logger {
 
     public static void warn(String message) {
         final var body = Log.builder()
+                .env(LogEnv.fromString(profile))
                 .level(LogLevel.WARN)
                 .message(message)
                 .build();
@@ -114,6 +125,7 @@ public class Logger {
 
     public static void warn(String message, Object data) {
         final var body = Log.builder()
+                .env(LogEnv.fromString(profile))
                 .level(LogLevel.WARN)
                 .message(message)
                 .data(data)
@@ -126,6 +138,7 @@ public class Logger {
 
     public static void error(String message) {
         final var body = Log.builder()
+                .env(LogEnv.fromString(profile))
                 .level(LogLevel.ERROR)
                 .message(message)
                 .build();
@@ -137,6 +150,7 @@ public class Logger {
 
     public static void error(String message, Object data) {
         final var body = Log.builder()
+                .env(LogEnv.fromString(profile))
                 .level(LogLevel.ERROR)
                 .message(message)
                 .data(data)
