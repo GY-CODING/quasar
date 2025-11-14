@@ -1,6 +1,6 @@
-package org.gycoding.quasar.logs.model;
+package org.gycoding.quasar.logs;
 
-public enum LogLevel {
+enum LogLevel {
     INFO, DEBUG, WARN, ERROR;
 
     public static LogLevel fromString(String levelString) {

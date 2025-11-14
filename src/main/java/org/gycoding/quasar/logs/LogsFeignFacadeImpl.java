@@ -1,9 +1,8 @@
-package org.gycoding.quasar.logs.feign.betterstack;
+package org.gycoding.quasar.logs;
 
 import feign.FeignException;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.gycoding.quasar.logs.model.Log;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -11,7 +10,7 @@ import org.springframework.validation.annotation.Validated;
 @Service
 @AllArgsConstructor
 @Slf4j
-public class LogsFeignFacadeImpl implements LogsFeignFacade {
+class LogsFeignFacadeImpl implements LogsFeignFacade {
     private final LogsFeignClient feignClient;
 
     @Override

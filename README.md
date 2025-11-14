@@ -16,7 +16,3 @@ Quasar is the official GYCODING's framework for back-end. Based on Spring Boot.
 |                                                                               Product Owner                                                                                |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | <img src="https://github.com/gy-toxyc.png?size=115" width=115> <br> [![toxyc](https://img.shields.io/badge/toxyc-yellow?style=for-the-badge)](https://github.com/gy-toxyc) |
-
-<br>
-
-<pre align="center">GYCODING 2025</pre>

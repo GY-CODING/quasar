@@ -1,7 +1,5 @@
-package org.gycoding.quasar.annotations;
+package org.gycoding.quasar.configs;
 
-import org.gycoding.quasar.configs.APIFilter;
-import org.gycoding.quasar.configs.CORSConfig;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.openfeign.EnableFeignClients;
