@@ -1,6 +1,6 @@
-package org.gycoding.quasar.logs;
+package org.gycoding.quasar.logs.model;
 
-enum LogEnv {
+public enum LogEnv {
     LOCAL, DEV, PRO;
 
     public static LogEnv fromString(String levelString) {
