@@ -1,4 +1,4 @@
-package org.gycoding.quasar.exceptions.model;
+package org.gycoding.quasar.exception.model;
 
 import org.springframework.http.HttpStatus;
 

@@ -1,8 +1,8 @@
-package org.gycoding.quasar.exceptions.controller;
+package org.gycoding.quasar.exception.controller;
 
-import org.gycoding.quasar.exceptions.model.QuasarException;
-import org.gycoding.quasar.exceptions.model.QuasarError;
-import org.gycoding.quasar.logs.service.Logger;
+import org.gycoding.quasar.exception.model.QuasarException;
+import org.gycoding.quasar.exception.model.QuasarError;
+import org.gycoding.quasar.logs.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.List;
 
 @RestControllerAdvice
-public class ValidationAdvice {
+class ValidationAdvice {
     @Value("${quasar.exceptions.logs:true}")
     private boolean logsEnabled;
 

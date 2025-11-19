@@ -1,11 +1,7 @@
-package org.gycoding.quasar.logs.service;
+package org.gycoding.quasar.logs;
 
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
-import org.gycoding.quasar.logs.feign.betterstack.LogsFeignFacade;
-import org.gycoding.quasar.logs.model.Log;
-import org.gycoding.quasar.logs.model.LogEnv;
-import org.gycoding.quasar.logs.model.LogLevel;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 

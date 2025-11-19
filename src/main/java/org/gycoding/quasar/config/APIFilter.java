@@ -1,11 +1,11 @@
-package org.gycoding.quasar.configs;
+package org.gycoding.quasar.config;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.gycoding.quasar.exceptions.model.QuasarException;
-import org.gycoding.quasar.exceptions.model.QuasarError;
+import org.gycoding.quasar.exception.model.QuasarException;
+import org.gycoding.quasar.exception.model.QuasarError;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -13,7 +13,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 
 @Component
-public class APIFilter extends OncePerRequestFilter {
+class APIFilter extends OncePerRequestFilter {
     @Value("${allowed.apiKey}")
     private String allowedApiKey;
 

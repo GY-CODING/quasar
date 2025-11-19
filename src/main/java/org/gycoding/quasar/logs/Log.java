@@ -1,9 +1,9 @@
-package org.gycoding.quasar.logs.model;
+package org.gycoding.quasar.logs;
 
 import lombok.Builder;
 
 @Builder
-public record Log(
+record Log(
         LogEnv env,
         LogLevel level,
         String message,

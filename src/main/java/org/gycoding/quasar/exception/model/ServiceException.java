@@ -1,4 +1,4 @@
-package org.gycoding.quasar.exceptions.model;
+package org.gycoding.quasar.exception.model;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;
