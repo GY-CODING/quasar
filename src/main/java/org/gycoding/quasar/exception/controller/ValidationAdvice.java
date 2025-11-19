@@ -2,7 +2,7 @@ package org.gycoding.quasar.exception.controller;
 
 import org.gycoding.quasar.exception.model.QuasarException;
 import org.gycoding.quasar.exception.model.QuasarError;
-import org.gycoding.quasar.logs.Logger;
+import org.gycoding.quasar.logging.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;

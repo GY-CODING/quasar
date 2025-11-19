@@ -1,4 +1,4 @@
-package org.gycoding.quasar.logs;
+package org.gycoding.quasar.logging;
 
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;

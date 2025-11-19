@@ -1,4 +1,4 @@
-package org.gycoding.quasar.logs;
+package org.gycoding.quasar.logging;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,4 +1,4 @@
-package org.gycoding.quasar.logs;
+package org.gycoding.quasar.logging;
 
 import lombok.Builder;
 
